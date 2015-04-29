@@ -1,3 +1,4 @@
+
 def echo(a)
 	a
 end
@@ -20,5 +21,8 @@ def first_word(a)
 	a.split(' ').first
 end
 def titleize(a)
-	a.split(' ').each {|s, x| s+x}
+	little_words = ['a','an','am','and','any','are','as','at','be','by','can','do','each','over','from','go','he','his','for','get','he','him','his', 'if','in','into','is','it',"it's",'let','my','no','on','or','the']
+	title = a.split.map {|word| little_words.include?(word) ? word : word.capitalize}
+	title[0].capitalize!
+	title.join(' ')
 end
